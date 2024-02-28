@@ -18,7 +18,6 @@ def getRandomFact(type, min, max):
 
     response = requests.get(url, headers=headers, params=querystring)
 
-    print(response.json())
     return response.json()
 
 print(getRandomFact("year", 50, 100))

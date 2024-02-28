@@ -13,3 +13,5 @@ Resources used:
 👉 https://www.youtube.com/watch?v=F_SBxcV335k
 
 👉 https://rapidapi.com/divad12/api/numbers-1/ 
+
+👉 https://www.appsloveworld.com/vuejs/100/2/vue-v-if-statement-to-check-if-variable-is-empty-or-null 
