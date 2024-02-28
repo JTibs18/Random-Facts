@@ -4,7 +4,8 @@ const obj = {
     data(){
         return {
             greeting: "Random Facts!",
-            fact: ""
+            fact: "",
+            image: "./static/images/fun-facts.png"
         }
     }, 
     methods:{

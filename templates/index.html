@@ -2,9 +2,22 @@
 
 
 {% block content %}
+    <style scoped>
+        .wrapper {
+            display: flex;
+            gap: 30px;
+            justify-content: center; 
+            align-items: center; 
+        }
+    </style>
+
     <div id="app"> 
-        <h1>{greeting}</h2>
-        <button v-on:click="getFact">
+        <div class="wrapper">
+            <img :src="image" width="100px" height="100px"/>
+            <h1>{greeting}</h2>
+        </div>
+        
+        <button @click="getFact">
             Random Fact
         </button>
         <p v-if="!!fact">Fact: {fact.text}</p>
