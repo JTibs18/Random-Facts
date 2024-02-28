@@ -1,10 +1,10 @@
 const { createApp } = Vue 
 
-const obj = {
+const factObj = {
     data(){
         return {
             greeting: "Random Facts!",
-            fact: "",
+            facts: [],
             image: "./static/images/fun-facts.png"
         }
     }, 
@@ -16,11 +16,13 @@ const obj = {
                     'X-Requested-With': "XMLHttpRequest"
                 }
             })
-
-            this.fact = await response.json()
+            await response.json().then((fact) => this.facts.push({...fact, id: this.facts.length}))
+        },
+        onShuffle(){
+             this.facts = _.shuffle(this.facts)
         }
     }, 
     delimiters: ['{', "}"]
 }
 
-createApp(obj).mount('#app')
+createApp(factObj).mount('#app')
