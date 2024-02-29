@@ -16,9 +16,31 @@
             <img :src="image" width="100px" height="100px"/>
             <h1>{greeting}</h2>
         </div>
-        
-        <button @click="getFact">
-            Random Fact
+        <div>
+            <div>
+                <label> Fact Type</label>
+                <select v-model="factType">
+                    <option value="" selected disabled >Choose here</option>
+                    <option> trivia </option>
+                    <option> math </option>
+                    <option> date </option>
+                    <option> year </option>
+                </select>
+            </div>
+            <div>
+                <label> min number </label> 
+                <input v-model="min" type="number" />
+            </div>
+            <div>
+                <label> max number </label> 
+                <input v-model="max" type="number" />
+            </div>
+        </div>
+        <button @click="submit">
+            Submit
+        </button>
+        <button v-if="facts.length > 1" @click="onShuffle">
+            Shuffle Facts 
         </button>
         <p v-if="facts.length">Most Recent Fact: {facts[facts.length - 1].text}</p>
         <h2> All Facts</h2>
@@ -29,8 +51,5 @@
                 </p>
             </li>
         </ul>
-        <button @click="onShuffle">
-            Shuffle Facts 
-        </button>
     </div>
 {% endblock %}
