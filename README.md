@@ -17,3 +17,5 @@ Resources used:
 👉 https://www.appsloveworld.com/vuejs/100/2/vue-v-if-statement-to-check-if-variable-is-empty-or-null 
 
 👉 https://vue-loader.vuejs.org/guide/scoped-css.html#notes
+
+👉 https://sentry.io/answers/flask-query-string/

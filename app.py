@@ -8,7 +8,11 @@ app = Flask(__name__)
 
 @app.route('/')
 def index():
-    randomFact = getRandomFact("math", 1, 1) # temp variables. need to get input from UI
+    factType = request.args.get("factType")
+    min = request.args.get("min")
+    max = request.args.get("max")
+
+    randomFact = getRandomFact(factType, min, max) 
     
     if request.headers.get('X-Requested-With') == "XMLHttpRequest":
         return jsonify(randomFact)

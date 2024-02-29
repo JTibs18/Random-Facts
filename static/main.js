@@ -14,7 +14,6 @@ const factObj = {
     methods:{
         async sendRequest(url, method){
             const myHeaders = new Headers({
-                'Content-Type': 'application/json', 
                 'X-Requested-With': "XMLHttpRequest"
             })
             const response = await fetch(url, {
@@ -25,7 +24,7 @@ const factObj = {
             return response
         },
         async submit(){
-            const response = await this.sendRequest(window.location, 'get')
+            const response = await this.sendRequest(`/?factType=${this.factType}&min=${this.min}&max=${this.max}`, 'get')
 
             await response.json().then((fact) => this.facts.push({...fact, id: this.facts.length}))
         },
