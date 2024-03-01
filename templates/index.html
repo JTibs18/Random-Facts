@@ -42,8 +42,11 @@
         <button v-if="facts.length > 1" @click="onShuffle">
             Shuffle Facts 
         </button>
-        <p v-if="facts.length">Most Recent Fact: {facts[facts.length - 1].text}</p>
-        <h2> All Facts</h2>
+        <button v-if="facts.length > 1" @click="onReverse">
+            Reverse Facts 
+        </button>
+        <p v-if="facts.length">Most Recent Fact: {facts[factCount - 1].text}</p>
+        <h2> All Facts ({factCount})</h2>
         <ul>
             <li v-for="fact in facts" :key="fact.id">
                 <p>

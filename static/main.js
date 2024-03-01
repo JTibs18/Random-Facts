@@ -30,8 +30,16 @@ const factObj = {
         },
         onShuffle(){
              this.facts = _.shuffle(this.facts)
+        },
+        onReverse(){
+            this.facts = this.facts.reverse()
         }
     }, 
+    computed: {
+        factCount(){
+            return this.facts.length
+        }
+    },
     delimiters: ['{', "}"]
 }
 
